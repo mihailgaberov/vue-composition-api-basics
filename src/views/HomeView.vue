@@ -10,6 +10,8 @@
       <button @click="increment(2)" class="btn">++</button>
     </div>
 
+    <p>This counter is {{ oddOrEven }}.</p>
+
     <div class="edit">
       <h4>Edit counter title:</h4>
       <input v-model="counterData.counterTitle" type="text">
@@ -19,10 +21,11 @@
 
 
 <script setup>
-import { reactive } from 'vue';
+import { computed, reactive } from 'vue';
 
 const appTitle = 'My Amazing Counter App'
 const counterData = reactive({ count: 0, counterTitle: 'My Counter' });
+const oddOrEven = computed(() => counterData.count % 2 === 0 ? 'even' : 'odd');
 
 const increment = (amount) => counterData.count += amount
 const decrement = (amount) => counterData.count -= amount
