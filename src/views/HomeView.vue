@@ -26,6 +26,7 @@ import {
   reactive,
   watch
 } from 'vue';
+import { vAutoFocus } from '@/directives/vAutoFocus';
 
 const appTitle = 'My Amazing Counter App'
 const counterData = reactive({ count: 0, counterTitle: 'My Counter' });
@@ -41,11 +42,7 @@ const oddOrEven = computed(() => counterData.count % 2 === 0 ? 'even' : 'odd');
 const increment = (amount) => counterData.count += amount
 const decrement = (amount) => counterData.count -= amount
 
-const vAutoFocus = {
-  mounted(el) {
-    el.focus();
-  }
-}
+
 </script>
 
 <style>
