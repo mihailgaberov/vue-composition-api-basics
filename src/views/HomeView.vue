@@ -6,6 +6,11 @@
       <span class="counter">{{ count }}</span>
       <button @click="increment" class="btn">+</button>
     </div>
+
+    <div class="edit">
+      <h4>Edit counter title:</h4>
+      <input v-model="counterTitle" type="text">
+    </div>
   </div>
 </template>
 
@@ -13,7 +18,7 @@
 <script setup>
 import { ref } from 'vue';
 
-const count = ref(0), counterTitle = ref('My Counter');
+const count = ref(0), counterTitle = ref('My Counter:');
 const increment = () => count.value++
 const decrement = () => count.value--
 </script>
@@ -31,5 +36,9 @@ const decrement = () => count.value--
 .counter {
   font-size: 2rem;
   padding: 0.5rem 1rem;
+}
+
+.edit {
+  margin-top: 60px;
 }
 </style>
