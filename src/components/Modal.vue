@@ -6,7 +6,7 @@
             </h1>
             <slot />
 
-            <button>Hide modal</button>
+            <button @click="$emit('hideModal')">Hide modal</button>
         </div>
     </Teleport>
 </template>
@@ -18,6 +18,10 @@ const props = defineProps({
         default: 'Modal title'
     }
 })
+
+const emit = defineEmits([
+    'hideModal'
+])
 </script>
 
 <style :scope>
