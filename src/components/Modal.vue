@@ -6,7 +6,7 @@
             </h1>
             <slot />
 
-            <button @click="handleButtonClick">Hide modal</button>
+            <button @click="$emit('update:modelValue', false)">Hide modal</button>
         </div>
     </Teleport>
 </template>
@@ -24,12 +24,12 @@ const props = defineProps({
 })
 
 const emit = defineEmits([
-    'hideModal'
+    'update:modelValue'
 ])
 
-const handleButtonClick = () => {
-    emit('hideModal')
-}
+/* const handleButtonClick = () => {
+    emit('update:modelValue', false)
+} */
 </script>
 
 <style :scope>
