@@ -4,11 +4,21 @@
 
     <p>Display the content of the post with ID of {{ $route.params.id }} here.</p>
 
+    <div>
+      <button @click="showPostId">Show Post ID</button>
+    </div>
     <p>
       <RouterLink to="/posts">&lt; Back</RouterLink>
     </p>
   </div>
 </template>
-<script setup>
 
+<script setup>
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
+const showPostId = () => {
+  alert(`The ID of this post is ${route.params.id}`)
+}
 </script>
