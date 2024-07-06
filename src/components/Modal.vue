@@ -2,7 +2,7 @@
     <Teleport to=".modals-container">
         <div class="modal">
             <h1>
-                <slot name="title" />
+                {{ title }}
             </h1>
             <slot />
 
@@ -12,9 +12,9 @@
 </template>
 
 <script setup>
-
-
-
+const props = defineProps({
+    title: String,
+})
 </script>
 
 <style :scope>
