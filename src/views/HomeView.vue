@@ -21,7 +21,10 @@
 
 
 <script setup>
-import { computed, reactive, watch } from 'vue';
+import {
+  computed,
+  onBeforeMount, onBeforeUnmount, onMounted, onUnmounted, reactive, watch
+} from 'vue';
 
 const appTitle = 'My Amazing Counter App'
 const counterData = reactive({ count: 0, counterTitle: 'My Counter' });
@@ -36,6 +39,20 @@ const oddOrEven = computed(() => counterData.count % 2 === 0 ? 'even' : 'odd');
 
 const increment = (amount) => counterData.count += amount
 const decrement = (amount) => counterData.count -= amount
+
+// Lifecycle hooks
+onBeforeMount(() => {
+  console.log('Component is about to mount');
+});
+onBeforeUnmount(() => {
+  console.log('Component is about to unmount');
+});
+onMounted(() => {
+  console.log('Component is mounted');
+});
+onUnmounted(() => {
+  console.log('Component is unmounted');
+});
 </script>
 
 <style>
