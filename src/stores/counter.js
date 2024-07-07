@@ -13,5 +13,9 @@ export const useCounterStore = defineStore('counter', () => {
     count.value -= amount
   }
 
-  return { count, increment, decrement, title }
+  function oddOrEven() {
+    return count.value % 2 === 0 ? 'even' : 'odd'
+  }
+
+  return { count, increment, decrement, oddOrEven, title }
 })

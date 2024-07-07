@@ -10,7 +10,7 @@
       <button @click="counterStore.increment(2)" class="btn">++</button>
     </div>
 
-    <p>This counter is odd.</p>
+    <p>This counter is {{ counterStore.oddOrEven() }}.</p>
 
     <div class="edit">
       <h4>Edit counter title:</h4>
