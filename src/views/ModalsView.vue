@@ -8,7 +8,7 @@
         </div>
         <button @click="showModal = true">Show modal</button>
 
-        <component :is="Modal" v-model="showModal" title="My Modal title (via props)">
+        <component :is="showDarkModals ? ModalDark : Modal" v-model="showModal" title="My Modal title (via props)">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, quos molestiae et repudiandae enim
                 officia eligendi illo minus tempore quibusdam quaerat corporis ipsa error dolor nesciunt voluptas
                 possimus similique quidem?</p>
@@ -19,6 +19,7 @@
 <script setup>
 import { ref } from 'vue'
 import Modal from '@/components/Modal.vue'
+import ModalDark from '@/components/ModalDark.vue'
 
 const showDarkModals = ref(false)
 const showModal = ref(false)

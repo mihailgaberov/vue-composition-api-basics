@@ -1,6 +1,6 @@
 <template>
     <Teleport to=".modals-container">
-        <div class="modal" v-if="modelValue">
+        <div class="modal-dark" v-if="modelValue">
             <h1>
                 {{ title }}
             </h1>
@@ -29,9 +29,9 @@ const emit = defineEmits([
 </script>
 
 <style :scope>
-.modal {
-    background: beige;
-    color: black;
+.modal-dark {
+    background: #333;
+    color: white;
     padding: 1rem;
     position: absolute;
     left: 0;
