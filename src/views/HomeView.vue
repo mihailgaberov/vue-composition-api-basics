@@ -3,11 +3,11 @@
     <h2 ref="appTitleRef">{{ appTitle }}</h2>
     <h3>{{ counterStore.title }}</h3>
     <div>
-      <button class="btn">--</button>
-      <button class="btn">-</button>
+      <button @click="counterStore.decrement(2)" class="btn">--</button>
+      <button @click="counterStore.decrement(1)" class="btn">-</button>
       <span class="counter">{{ counterStore.count }}</span>
-      <button @click="counterStore.increment()" class="btn">+</button>
-      <button class="btn">++</button>
+      <button @click="counterStore.increment(1)" class="btn">+</button>
+      <button @click="counterStore.increment(2)" class="btn">++</button>
     </div>
 
     <p>This counter is odd.</p>

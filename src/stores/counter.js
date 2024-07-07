@@ -5,9 +5,13 @@ export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)
   const title = ref('My Counter Title')
 
-  function increment() {
-    count.value++
+  function increment(amount) {
+    count.value += amount
   }
 
-  return { count, increment, title }
+  function decrement(amount) {
+    count.value -= amount
+  }
+
+  return { count, increment, decrement, title }
 })
